@@ -1,0 +1,66 @@
+local Lazy = Instance.new("ScreenGui")
+local A = Instance.new("TextLabel")
+
+Lazy.Name = "Lazy"
+Lazy.Parent = game.Players.LocalPlayer.PlayerGui
+Lazy.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+A.Name = "A"
+A.Parent = Lazy
+A.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+A.BackgroundTransparency = 1.000
+A.Position = UDim2.new(0.031315241, 0, 0.031315241, 0)
+A.Size = UDim2.new(0, 114, 0, 36)
+A.Font = Enum.Font.Arcade
+A.Text = "Press LeftControl"
+A.TextColor3 = Color3.fromRGB(255, 255, 255)
+A.TextScaled = true
+A.TextSize = 14.000
+A.TextStrokeTransparency = 0.000
+A.TextWrapped = true
+
+local plr = game.Players.LocalPlayer
+local chr = plr.Character or plr.CharacterAdded:Wait()
+local root = chr:WaitForChild("HumanoidRootPart")
+local uis = game:GetService("UserInputService")
+uis.InputBegan:Connect(function(input)
+    if input.KeyCode == Enum.KeyCode.LeftControl then
+    local rayparams = RaycastParams.new()
+    local ray = workspace:Raycast(root.Position, root.CFrame.UpVector * -10, rayparams)
+    if ray then 
+    local Block = game.ReplicatedStorage.Special.Block:Clone()
+    Block.Parent = Workspace:FindFirstChild("WinterMap")
+    Block.Position = game.Players.LocalPlayer.Character.HumanoidRootPart.Position + Vector3.new(0,-1,0)
+    end
+    end
+end)
+local plr = game.Players.LocalPlayer
+local chr = plr.Character or plr.CharacterAdded:Wait()
+local root = chr:WaitForChild("HumanoidRootPart")
+local uis = game:GetService("UserInputService")
+uis.InputBegan:Connect(function(input)
+    if input.KeyCode == Enum.KeyCode.LeftControl then
+    local rayparams = RaycastParams.new()
+    local ray = workspace:Raycast(root.Position, root.CFrame.UpVector * -10, rayparams)
+    if ray then 
+    local Block = game.ReplicatedStorage.Special.Block:Clone()
+    Block.Parent = Workspace:FindFirstChild("SpringMap")
+    Block.Position = game.Players.LocalPlayer.Character.HumanoidRootPart.Position + Vector3.new(0,-1,0)
+    end
+    end
+end)
+local plr = game.Players.LocalPlayer
+local chr = plr.Character or plr.CharacterAdded:Wait()
+local root = chr:WaitForChild("HumanoidRootPart")
+local uis = game:GetService("UserInputService")
+uis.InputBegan:Connect(function(input)
+    if input.KeyCode == Enum.KeyCode.LeftControl then
+    local rayparams = RaycastParams.new()
+    local ray = workspace:Raycast(root.Position, root.CFrame.UpVector * -10, rayparams)
+    if ray then 
+    local Block = game.ReplicatedStorage.Special.Block:Clone()
+    Block.Parent = Workspace:FindFirstChild("SummerMap")
+    Block.Position = game.Players.LocalPlayer.Character.HumanoidRootPart.Position + Vector3.new(0,-1,0)
+    end
+    end
+end)
